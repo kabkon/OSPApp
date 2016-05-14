@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Aplikacja OSP:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Aplikacja_OSP_jar</output-path>
+    <root id="archive" name="Aplikacja OSP.jar">
+      <element id="module-output" name="Aplikacja OSP" />
+      <element id="extracted-dir" path="D:/Pobrane/sqlite-jdbc-3.8.11.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddTrainingMemberController">
+   <children>
+      <Label fx:id="LabelHead" layoutX="14.0" layoutY="36.0" text="Informacje o szkoleniu" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="34.0" />
+      <Separator layoutX="14.0" layoutY="51.0" prefWidth="200.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="40.0" />
+      <GridPane layoutX="27.0" layoutY="66.0" prefHeight="158.0" prefWidth="301.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Nazwa szkolenia" />
+            <Label text="Data ukończenia szkolenia" GridPane.rowIndex="1" />
+            <Label text="Dodatkowe inforamcje" GridPane.rowIndex="3" />
+            <TextField fx:id="tfTrainingName" GridPane.columnIndex="1" />
+            <TextArea fx:id="taTrainingInfo" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpTrainingDate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Miejsce szkolenia" GridPane.rowIndex="2" />
+            <TextField fx:id="tfTrainingPlace" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button layoutX="137.0" layoutY="298.0" mnemonicParsing="false" onAction="#actionAddTraining" prefHeight="30.0" prefWidth="100.0" text="Dodaj" />
+   </children>
+</AnchorPane>

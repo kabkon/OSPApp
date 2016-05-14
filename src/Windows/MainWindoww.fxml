@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainWindowController">
+   <children>
+      <TabPane layoutX="10.0" layoutY="10.0" prefHeight="506.0" prefWidth="732.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="tabMembers" text="Członkowie OSP">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="732.0">
+                     <children>
+                        <TableView fx:id="tableMembers" layoutX="20.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcMembersFirstName" prefWidth="113.0" text="Imię" />
+                            <TableColumn fx:id="tcMembersSurname" prefWidth="133.0" text="Nazwisko" />
+                              <TableColumn fx:id="tcMembersAdress" prefWidth="212.0" text="Adres" />
+                              <TableColumn fx:id="tcMembersPhone" prefWidth="151.0" text="Numer telefonu" />
+                              <TableColumn fx:id="tcMemberBirthDate" prefWidth="122.0" text="Data urodzenia" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="14.0" layoutY="457.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddMember" prefHeight="25.0" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionEditMember" prefWidth="65.0" text="Edytuj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveMember" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label text="Filtr: ">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="rbAll" mnemonicParsing="false" onAction="#actionAllMembers" text="Wszyscy">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbHonoured" mnemonicParsing="false" onAction="#actionSelectHonouredMembers" text="Honorowi">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbYoung" mnemonicParsing="false" onAction="#actionSelectYoungMembers" text="Młodzieżowi">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbNormal" mnemonicParsing="false" onAction="#actionSelectNormalMembers" text="Zwyczajni">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <Label text="Liczba członków: ">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="tfQuantityOfMembers" prefHeight="25.0" prefWidth="39.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Zarząd">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="460.0">
+                     <children>
+                        <GridPane layoutX="55.0" layoutY="67.0" prefHeight="270.0" prefWidth="283.0" AnchorPane.leftAnchor="55.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="84.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.0" minWidth="10.0" prefWidth="157.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="LabelHead" text="Prezes" />
+                              <Label fx:id="LabelHead" text="Wiceprezes" GridPane.rowIndex="1" />
+                              <Label fx:id="LabelHead" text="Naczelnik" GridPane.rowIndex="2" />
+                              <Label fx:id="LabelHead" text="Wicenaczelnik" GridPane.rowIndex="3" />
+                              <Label fx:id="LabelHead" text="Skarbnik" GridPane.rowIndex="4" />
+                              <Label fx:id="LabelHead" text="Sekretarz" GridPane.rowIndex="5" />
+                              <Label fx:id="LabelHead" text="Gospodarz" GridPane.rowIndex="6" />
+                              <Label fx:id="LabelHead" text="Członek" GridPane.rowIndex="7" />
+                              <Label fx:id="LabelHead" text="Członek" GridPane.rowIndex="8" />
+                              <Label text="Jan Panek" GridPane.columnIndex="1" />
+                              <Label text="Mateusz Mróz" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Arkadiusz Stolarczyk" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Mateusz Dobosz" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Konrad Kabat" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Konrad Kluzik" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Sebastian Żurek" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Kamil Lewnadowski" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Leszek Dobosz" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="441.0" layoutY="67.0" prefHeight="90.0" prefWidth="273.0" AnchorPane.rightAnchor="18.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="94.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="139.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label fx:id="LabelHead" text="Przewodniczący" />
+                              <Label fx:id="LabelHead" text="Sekretarz" GridPane.rowIndex="1" />
+                              <Label fx:id="LabelHead" text="Członek" GridPane.rowIndex="2" />
+                              <Label text="Sławomir Skrabot" GridPane.columnIndex="1" />
+                              <Label text="Mirosław Skrabot" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Łukasz Dudek" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="LabelHead2" layoutX="122.0" layoutY="23.0" text="Zarząd">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label fx:id="LabelHead2" layoutX="487.0" layoutY="23.0" text="Komisja rewizyjna">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <HBox layoutX="20.0" layoutY="407.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabInventory" text="Inwentarz">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableInventory" layoutX="14.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcInventoryName" prefWidth="234.0" text="Nazwa" />
+                            <TableColumn fx:id="tcInventoryBrand" prefWidth="216.0" text="Marka" />
+                              <TableColumn fx:id="tcInventoryQuantity" prefWidth="83.0" text="Ilość" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutY="457.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddInventory" prefHeight="25.0" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionEditInventory" prefWidth="65.0" text="Edytuj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveInventory" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label text="Filtr: ">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="rbInventoryAll" mnemonicParsing="false" onAction="#actionSelectInventoryAll" text="Wszystko">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbGaraż" mnemonicParsing="false" onAction="#actionSelectGarage" text="Garaż">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbSamochod" mnemonicParsing="false" onAction="#actionSelectCar" text="Samochód">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbRemiza" mnemonicParsing="false" onAction="#actionSelectRemiza" text="Remiza">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbKuchnia" mnemonicParsing="false" onAction="#actionSelectKitchen" text="Kuchnia">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbScena" mnemonicParsing="false" onAction="#actionSelectSquare" text="Scena">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabActions" text="Wyjazdy">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableActions" layoutX="51.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcActionsKind" prefWidth="151.0" text="Rodzaj" />
+                            <TableColumn fx:id="tcActionsAddress" prefWidth="223.0" text="Adres zdarzenia" />
+                              <TableColumn fx:id="tcActionsDate" prefWidth="128.0" text="Data wyjazdu" />
+                              <TableColumn fx:id="tcActionsTimeStart" prefWidth="116.0" text="Czas wyjazdu" />
+                              <TableColumn fx:id="tcActionsTimeBack" prefWidth="113.0" text="Czas powrotu" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="45.0" layoutY="447.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddAction" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionEditAction" prefWidth="65.0" text="Edytuj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveAction" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCars" text="Samochody">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCars" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcCarsBrand" prefWidth="168.0" text="Marka" />
+                            <TableColumn fx:id="tcCarsType" prefWidth="160.0" text="Typ" />
+                              <TableColumn fx:id="tcCarsRegistrationNumber" prefWidth="142.0" text="Numer rejestracyjny" />
+                              <TableColumn fx:id="tcCarsServiceTerm" prefWidth="157.0" text="Termin przeglądu" />
+                              <TableColumn fx:id="tcCarsProductionDate" prefWidth="104.0" text="Data produkcji" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutY="441.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddCar" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionEditCar" prefWidth="65.0" text="Edytuj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveCar" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCompetitions" text="Zawody">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCompetitions" layoutX="45.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcCompetitionsKind" prefWidth="341.0" text="Rodzaj" />
+                            <TableColumn fx:id="tcCompetitionsDate" minWidth="0.0" prefWidth="116.0" text="Data rozegrania" />
+                              <TableColumn fx:id="tcCompetitionsPlace" prefWidth="210.0" text="Miejsce zawodów" />
+                              <TableColumn fx:id="tcCompetitionsPosition" prefWidth="64.0" text="Pozycja" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutX="6.0" layoutY="438.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddCompetition" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionEditCompetition" prefWidth="65.0" text="Edytuj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveCompetition" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabSubscriptions" text="Składki">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="787.0">
+                     <children>
+                        <TableView fx:id="tableSubscriptions" layoutX="56.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcSubscriptionsMember" prefWidth="308.0" text="Członek" />
+                            <TableColumn fx:id="tcSubscriptionsFee" prefWidth="68.0" text="Kwota" />
+                              <TableColumn fx:id="tcSubscriptionsDate" prefWidth="121.0" text="Data" />
+                              <TableColumn fx:id="tcSubscriptionsYear" prefWidth="75.0" text="Rok" />
+                          </columns>
+                        </TableView>
+                        <HBox layoutY="434.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="460.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#actionAddSubscription" prefHeight="25.0" prefWidth="65.0" text="Dodaj">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#actionRemoveSubscription" prefHeight="25.0" prefWidth="65.0" text="Usuń">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label text="Filtr: ">
+                                 <HBox.margin>
+                                    <Insets left="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <RadioButton fx:id="rbSubAll" mnemonicParsing="false" onAction="#actionSelecteSubAll" text="Wszystkie">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbSub2016" mnemonicParsing="false" onAction="#actionSelectSubscription2016" text="2016">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbSub2015" mnemonicParsing="false" onAction="#actionSelectSubscription2015" text="2015">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                              <RadioButton fx:id="rbSub2014" mnemonicParsing="false" onAction="#actionSelectSubscription2014" text="2014">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

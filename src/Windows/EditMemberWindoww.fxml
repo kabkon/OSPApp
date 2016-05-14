@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.EditMemberController">
+   <children>
+      <Label fx:id="LabelHead" layoutX="14.0" layoutY="36.0" text="Dane osobowe" />
+      <Separator layoutX="14.0" layoutY="50.0" prefHeight="5.0" prefWidth="621.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <GridPane layoutX="34.0" layoutY="67.0" prefHeight="140.0" prefWidth="595.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="46.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="181.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="5.0" prefWidth="7.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="182.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Imię" />
+            <Label text="Nazwisko" GridPane.rowIndex="1" />
+            <Label text="Data urodzenia" GridPane.rowIndex="2" />
+            <Label text="Płeć" GridPane.rowIndex="3" />
+            <Label text="Status" GridPane.columnIndex="3" />
+            <Label text="Pesel" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Imię ojca" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="Miejsce pracy" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpBirthDate" prefHeight="25.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfMemberFirstName" GridPane.columnIndex="1" />
+            <TextField fx:id="tfMemberSurName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfMemberIdNumber" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="tfMemberFathersName" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="tfMemberWorkPlace" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbMemberSex" prefHeight="25.0" prefWidth="333.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbMemberStatus" prefHeight="25.0" prefWidth="256.0" GridPane.columnIndex="4" />
+            <Label text="Telefon" GridPane.rowIndex="4" />
+            <Label text="Email" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <TextField fx:id="tfMemberTel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tfMemberEmail" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Label fx:id="LabelHead" layoutX="13.0" layoutY="240.0" text="Dane adresowe" />
+      <Separator layoutX="13.0" layoutY="257.0" prefHeight="5.0" prefWidth="621.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <GridPane layoutX="34.0" layoutY="285.0" prefHeight="140.0" prefWidth="595.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="46.0">
+         <children>
+            <Label text="Miejscowość" />
+            <Label text="Ulica" GridPane.rowIndex="1" />
+            <Label text="Gmina" GridPane.columnIndex="3" />
+            <Label text="Kod pocztowy" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tfMemberCity" GridPane.columnIndex="1" />
+            <TextField fx:id="tfMemberStreet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfMemberPostCode" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <TextField fx:id="tfMemberRegion" GridPane.columnIndex="4" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="181.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="5.0" prefWidth="7.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="182.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label fx:id="LabelHead" layoutX="13.0" layoutY="460.0" text="Pozostałe informacje" />
+      <TabPane fx:id="MemberTabPane" layoutX="34.0" layoutY="496.0" prefHeight="165.0" prefWidth="595.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+        <tabs>
+          <Tab text="Dodatkowe">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="30.0" text="Początek służby" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="143.0" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="6.0" />
+                        <Label layoutX="116.0" layoutY="69.0" text="Ważność badań lekarskich" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="69.0" />
+                        <Label layoutX="373.0" layoutY="6.0" text="Prawo jazdy" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="373.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="6.0" />
+                        <DatePicker fx:id="dpMemberStartService" layoutX="4.0" layoutY="56.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="362.0" AnchorPane.topAnchor="31.0" />
+                        <DatePicker fx:id="dpMemberMedicalCheckUp" layoutX="99.0" layoutY="94.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="362.0" AnchorPane.topAnchor="97.0" />
+                        <ComboBox fx:id="cmbMemberDriverLicense" layoutX="330.0" layoutY="31.0" prefWidth="150.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="31.0" />
+                        <Label layoutX="395.0" layoutY="69.0" text="JOT" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="395.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="69.0" />
+                        <ComboBox fx:id="cmbMemberJOT" layoutX="330.0" layoutY="97.0" prefWidth="150.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="97.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Wyposażenie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableEquipment" layoutY="-32.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcEquipmentName" prefWidth="168.0" text="Nazwa" />
+                            <TableColumn fx:id="tcEquipmentQuantity" prefWidth="77.0" text="Ilość sztuk" />
+                              <TableColumn fx:id="tcEquipmentInfo" prefWidth="199.0" text="Dodatkowe informacje" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="465.0" layoutY="25.0" maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#actionAddEquipment" prefHeight="30.0" prefWidth="100.0" text="Dodaj" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="25.0" />
+                        <Button layoutX="465.0" layoutY="68.0" maxHeight="30.0" maxWidth="100.0" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#actionRemoveEquipment" prefHeight="30.0" prefWidth="100.0" text="Usuń" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="68.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Szkolenia">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableTrainings" layoutX="-7.0" layoutY="-52.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcTrainingKind" prefWidth="200.0" text="Rodzaj" />
+                            <TableColumn fx:id="tcTrainingDate" prefWidth="123.0" text="Data ukończenia" />
+                              <TableColumn fx:id="tcTrainingPlace" prefWidth="121.0" text="Miejsce szkolenia" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="479.0" layoutY="43.0" mnemonicParsing="false" onAction="#actionAddTraining" prefHeight="30.0" prefWidth="100.0" text="Dodaj" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="25.0" />
+                        <Button layoutX="465.0" layoutY="68.0" mnemonicParsing="false" onAction="#actionRemoveTraining" prefHeight="30.0" prefWidth="100.0" text="Usuń" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="68.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Odznaczenia">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableMedals" layoutX="-6.0" layoutY="-64.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcMedalsName" prefWidth="186.0" text="Nazwa" />
+                            <TableColumn fx:id="tcMedalsDate" prefWidth="108.0" text="Data przyznania" />
+                              <TableColumn fx:id="tcMedalsInfo" prefWidth="150.0" text="Dodatkowe informacje" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="467.0" layoutY="28.0" mnemonicParsing="false" onAction="#actionAddMedal" prefHeight="30.0" prefWidth="100.0" text="Dodaj" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="25.0" />
+                        <Button layoutX="465.0" layoutY="68.0" mnemonicParsing="false" onAction="#actionRemoveMedals" prefHeight="30.0" prefWidth="100.0" text="Usuń" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="68.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Wyjazdy">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableActions" layoutX="-12.0" layoutY="-32.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcActionKind" prefWidth="183.0" text="Rodzaj zdarzenia" />
+                            <TableColumn fx:id="tcActionPlace" prefWidth="143.0" text="Miejsce zdarzenia" />
+                              <TableColumn fx:id="tcActionDate" prefWidth="118.0" text="Data wyjazdu" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Składki">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableSubscriptions" layoutX="22.0" layoutY="-39.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tcSubscriptionsDate" prefWidth="170.0" text="Rok wpłaty" />
+                              <TableColumn fx:id="tcSubscriptionsValue" prefWidth="70.0" text="Kwota" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Separator layoutX="14.0" layoutY="477.0" prefHeight="5.0" prefWidth="621.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Button layoutX="288.0" layoutY="677.0" mnemonicParsing="false" onAction="#actionEditMember" prefHeight="30.0" prefWidth="100.0" text="Zapisz" />
+   </children>
+</AnchorPane>
